@@ -82,29 +82,30 @@ var suffixes={
      * 
      * @param {Number to convert} num 
      */
-function fourDigitConvert(num){
+   function fourDigitConvert(num){
     var currentNumText="";
-if(num == 0){
-    return "";
+    if(num == 0){
+        return "";
 }
-if(num<100){
-currentNumText+=threeDigitConvert(num);
-return currentNumText;
+if(num<1000){
+    currentNumText+=threeDigitConvert(num);
+    return currentNumText;
 }
 currentNumText+=ones[num.toString().charAt(0)];
 currentNumText+=" thousand ";
-
+    
 if(num.toString().substr(1)!="000"){
-currentNumText+=threeDigitConvert(parseInt(num.toString().substr(1)));
+    currentNumText+=threeDigitConvert(parseInt(num.toString().substr(1)));
 }
 return currentNumText;
-}
+    }
+
     /**
      * 
      * @param {Number to convert} num 
      */
     function threeDigitConvert(num){
-        var currentNumText="";
+    var currentNumText="";
     if(num == 0){
         return "";
 }
